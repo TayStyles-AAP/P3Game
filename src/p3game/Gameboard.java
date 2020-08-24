@@ -13,6 +13,7 @@ import java.util.*;
  * @author taystyles
  */
 public class Gameboard extends generator{
+    SavedData gameData = new SavedData();
     
     public static void generateBoard(){
         SavedData gameData = new SavedData();

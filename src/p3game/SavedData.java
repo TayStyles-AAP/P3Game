@@ -1,19 +1,19 @@
 package P3Game;
 
 public class SavedData{
-    private static boolean debug;
-    private static int x;
-    private static int y;
-    private static char difficulty;
-    private static int playerX;
-    private static int playerY;
-    private static int enemyX;
-    private static int enemyY;
-    private static int[][] arr;
-    private static boolean inGame;
-    private static int playerToken = 1;
-    private static int EnemyToken = 2;
-    private static int enemyLives;
+    private boolean debug;
+    private int x;
+    private int y;
+    private char difficulty;
+    private int playerX;
+    private int playerY;
+    private int enemyX;
+    private int enemyY;
+    private int[][] arr;
+    private boolean inGame;
+    private int playerToken = 1;
+    private int EnemyToken = 2;
+    private int enemyLives;
     
     public boolean isDebug() {
         return debug;
@@ -111,11 +111,13 @@ public class SavedData{
     } 
 
     public void setEnemyX(int enemyX) {
-        SavedData.enemyX = enemyX;
+        this.enemyX = enemyX;
     }
 
+
+
     public void setEnemyY(int enemyY) {
-        SavedData.enemyY = enemyY;
+        this.enemyY = enemyY;
     }
 
     public void setArr(int[][] arr) {
@@ -123,10 +125,10 @@ public class SavedData{
     }
 
     public void setInGame(boolean inGame) {
-        SavedData.inGame = inGame;
+        this.inGame = inGame;
     }
     
     public void setEnemyLives(int enemyLives) {
-        SavedData.enemyLives = enemyLives;
+        this.enemyLives = enemyLives;
     }
 }
