@@ -24,7 +24,7 @@ public class Main {
         gameData.setEnemyLives(5);
         
         Gameboard gameboard = new Gameboard();
-        gameboard.generateBoard();
-        gameboard.startGame(0);
+        gameboard.generateBoard(gameData);
+        gameboard.startGame(0, gameData);
     }
 }

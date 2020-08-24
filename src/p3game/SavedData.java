@@ -32,7 +32,7 @@ public class SavedData{
     }
 
     public int getX() {
-        return x;
+        return this.x;
     }
 
     public int getY() {
@@ -71,32 +71,24 @@ public class SavedData{
         this.debug = debug;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
     public void setDifficulty(char difficulty) {
         switch (difficulty) {
             case 'E':
             case 'e':
-                setX(10);
-                setY(10);
+                this.x = 10;
+                this.y = 10;
                 this.difficulty = difficulty;
                 break;
             case 'H':
             case 'h':
-                setX(25);
-                setY(25);
+                this.x = 25;
+                this.y = 25;
                 this.difficulty = difficulty;
                 break;
             default:
                 System.out.println("That wasnt a valid difficulty. Easy selected.");
-                setX(10);
-                setY(10);
+                this.x = 10;
+                this.y = 10;
                 this.difficulty = 'E';
                 break;
         }
