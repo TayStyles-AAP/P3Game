@@ -19,7 +19,7 @@ public class Gameboard extends generator{
         
         if (gameData.isInGame() == false){
             gameData.setArr(new int[gameData.getX()][gameData.getY()]);
-            genTerrain();
+            //genTerrain();
             genEntitys('P');
             genEntitys('E');
         }
@@ -113,8 +113,6 @@ public class Gameboard extends generator{
     */
     public static void updateGameboard(int changePlayerX, int changePlayerY){
         SavedData gameData = new SavedData();
-        int enemyTemp[][] = gameData.getArr();
-        int playerTemp[][] = gameData.getArr();
         System.out.println("~~~~~~~~~~~~ | UPDATED Gameboard | ~~~~~~~~~~~~");
         
         if (gameData.getEnemyLives() == 0){
@@ -123,7 +121,7 @@ public class Gameboard extends generator{
         
         //<<--ENEMY MOVEMENTS BELOW --//>>
         int randMove = ThreadLocalRandom.current().nextInt(0,4);
-        
+        int enemyTemp[][] = gameData.getArr();
         switch (randMove) {
             case 0:{
                     //Enemy up
@@ -175,6 +173,10 @@ public class Gameboard extends generator{
                 break;
         }
         gameData.setArr(enemyTemp);
+        // </--Enemy movments end --/>
+        
+        // <-- Player movments start -->
+        int playerTemp[][] = gameData.getArr();
         
         if (changePlayerY != 0){
             int newPos = gameData.getPlayerY() + changePlayerY;                                     // Create new int and assign it the players current YPos -1, this is to move the player up the array.
@@ -198,7 +200,7 @@ public class Gameboard extends generator{
             System.out.println("Error in the Gameboard.java class, in the UpdateGameboard() function.");
         }
         gameData.setArr(playerTemp);
-
+        // </-- Player movments end --/>
         if (gameData.getEnemyX() == gameData.getPlayerX() && gameData.getEnemyY() == gameData.getPlayerY()){
             int tempLives = gameData.getEnemyLives();
             tempLives--;
@@ -217,10 +219,13 @@ public class Gameboard extends generator{
             count++;
         }
 
-        while(count <5){
+        while(count < 5){
             System.out.print("♡ ");
             count++;
         }
-        System.out.println();
+        if (gameData.getEnemyLives() ==0){
+            System.exit(0);
+        }
+        System.out.println();   
     }
 }
