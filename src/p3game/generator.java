@@ -11,8 +11,8 @@ import java.util.concurrent.ThreadLocalRandom;
  * @author taystyles
  */
 public class generator {
-    public static void genEntitys(char playerType){
-        SavedData gameData = new SavedData();
+    SavedData gameData;
+    public void genEntitys(char playerType){
         int randX = ThreadLocalRandom.current().nextInt(0,gameData.getX()); //Generate random value between 0 and max X value and assign it to RandX
         int randY = ThreadLocalRandom.current().nextInt(0,gameData.getY()); //Generate random value between 0 and max Y value and assign it to RandY
         int tempArr[][] = gameData.getArr(); //Make new temp array and assign it the value of the main array

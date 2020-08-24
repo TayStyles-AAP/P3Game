@@ -15,9 +15,7 @@ import java.util.*;
 public class Gameboard extends generator{
     SavedData gameData = new SavedData();
     
-    public static void generateBoard(){
-        SavedData gameData = new SavedData();
-        
+    public void generateBoard(){
         if (gameData.isInGame() == false){
             gameData.setArr(new int[gameData.getX()][gameData.getY()]);
             //genTerrain();
@@ -52,8 +50,7 @@ public class Gameboard extends generator{
 /*
  * This startGame() is the loop that starts the game/ is the workspace for the rest of the game.
  */
-    public static void startGame(int f){
-        SavedData gameData = new SavedData();
+    public void startGame(int f){
         Scanner scan = new Scanner(System.in);
         gameData.setInGame(true);
         
@@ -112,8 +109,7 @@ public class Gameboard extends generator{
     /*
     * This updateGameboard() is in charge of updating the board with the most up-to-date user/ enemy information/ locations.
     */
-    public static void updateGameboard(int changePlayerX, int changePlayerY){
-        SavedData gameData = new SavedData();
+    public void updateGameboard(int changePlayerX, int changePlayerY){
         System.out.println("~~~~~~~~~~~~ | UPDATED Gameboard | ~~~~~~~~~~~~");
         
         if (gameData.getEnemyLives() == 0){
@@ -207,7 +203,7 @@ public class Gameboard extends generator{
             tempLives--;
             gameData.setEnemyLives(tempLives);
             gameData.getArr();
-            generator.genEntitys('E');
+            genEntitys('E');
         }
         generateBoard();
     }

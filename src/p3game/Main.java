@@ -22,7 +22,9 @@ public class Main {
         System.out.println("~~~~~~~~~~~~ | Generated Gameboard | ~~~~~~~~~~~~\n\n"
             + "Key: \n1 = YOU\n2 = Forrest\n3 = Beach\n4 = Enemy");
         gameData.setEnemyLives(5);
-        Gameboard.generateBoard();
-        Gameboard.startGame(0);
+        
+        Gameboard gameboard = new Gameboard();
+        gameboard.generateBoard();
+        gameboard.startGame(0);
     }
 }
