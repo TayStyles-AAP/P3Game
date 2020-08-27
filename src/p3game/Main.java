@@ -13,7 +13,8 @@ import java.util.*;
  */
 public class Main {
     public static void main(String[] args) throws java.lang.Exception{
-        SavedData gameData = new SavedData();        
+        SavedData gameData = new SavedData();  
+        Gameboard gameboard = new Gameboard();
         System.out.println("Easy(E) or Hard(H)?");
         char difficulty = (char) System.in.read();
         
@@ -22,8 +23,7 @@ public class Main {
         System.out.println("~~~~~~~~~~~~ | Generated Gameboard | ~~~~~~~~~~~~\n\n"
             + "Key: \n1 = YOU\n2 = Forrest\n3 = Beach\n4 = Enemy");
         gameData.setEnemyLives(5);
-        
-        Gameboard gameboard = new Gameboard();
+                
         gameboard.generateBoard(gameData);
         gameboard.startGame(0, gameData);
     }
